@@ -1,0 +1,259 @@
+/*  Warna dan tema web */
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --accent: #aa3bff;
+  --pink: #ff4081;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  font: 18px/145% var(--sans);
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --accent: #c084fc;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*latar warna seluruh halaman web */
+body {
+  background-color: #e0f2fe;
+  color: var(--text);
+}
+
+/* Wrapper untuk halaman */
+.wrapper {
+  width: 1100px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Navigasi untuk Header */
+nav {
+  width: 100%;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+/* tata letak logo menu */
+nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+/* tampilan logo awal */
+nav .logo a {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  background-color: #ff4081;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+/* menu navigasi */
+nav .menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+/*tampilan tombol menu navigasi */
+nav .menu ul li a {
+  color: #aa3bff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;          
+  border: 1px solid #d8b4fe;   
+  border-radius: 8px;          
+  background-color: #f3e8ff;   
+  transition: all 0.3s ease;  
+}
+/* efek kursor utk tombol */
+nav .menu ul li a:hover {
+  background-color: #aa3bff;   
+  color: #ffffff;              
+}
+
+
+/* Custom tombol */
+.tbl-biru {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.tbl-pink {
+  background: var(--pink);
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/*  Tata letak section halaman*/
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 40px;
+}
+/* untuk ukuran gaya gamabr */
+section img {
+  max-width: 250px;
+  border-radius: 12px;
+}
+/* untuk pembungkus text*/
+.kolom {
+  flex: 1;
+}
+/*text deskripsi kecil */
+.kolom .deskripsi {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+}
+/* judul utama */
+.kolom h2 {
+  font-size: 32px;
+  color: var(--text-h);
+  margin-bottom: 12px;
+}
+
+/* Container khusus skills */
+.skills-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+/*  Layout grid untuk proyek */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+/*  kotak proyek putih */
+.project-card {
+  background-color: #ffffff;
+  border: 1px solid #c084fc;
+  padding: 20px;
+  border-radius: 12px;
+}
+/* teks katagori*/
+.project-kategori {
+  font-size: 12px;
+  color: #7e22ce;
+  font-weight: bold;
+}
+
+/* style Contact */
+#contact {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: 40px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section h3 {
+  color: var(--text-h);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Efek scroll halus */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tata letak Beranda: Gambar Kiri, Teks Kanan */
+#beranda {
+  display: flex;
+  flex-direction: row;        /* Menyusun elemen ke samping (kiri-kanan) */
+  align-items: center;        /* Mengatur posisi vertikal agar sejajar di tengah */
+  justify-content: center;   /* Mengatur posisi horizontal di tengah */
+  gap: 40px;                  /* Jarak antara gambar dan teks */
+  text-align: left;           /* Teks rata kiri */
+  padding: 60px 0;            /* Jarak atas-bawah yang pas */
+  margin-bottom: 40px;
+  scroll-margin-top: 80px;    /* Mencegah judul terpotong navbar saat diklik */
+}
+
+/* Ukuran foto khusus beranda */
+#beranda img {
+  width: 100%;
+  max-width: 320px;           /* Sesuaikan ukuran gambar di sini */
+  height: auto;
+  border-radius: 16px;
+  flex-shrink: 0;             /* Mencegah gambar menyusut */
+}
+
+/* Penyesuaian judul di beranda */
+#beranda h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #aa3bff;
+  margin: 10px 0;
+}
+/* Layout kartu Skill */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.skill-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.skill-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.skill-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
